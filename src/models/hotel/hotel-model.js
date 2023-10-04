@@ -10,6 +10,14 @@ const hotelModel = (sequelize, DataTypes) =>
     rating: { type: DataTypes.FLOAT },
     price: { type: DataTypes.STRING },
     ownerId: { type: DataTypes.INTEGER },
+    long: {
+      type: DataTypes.FLOAT,
+      required: true,
+    },
+    lat: {
+      type: DataTypes.FLOAT,
+      required: true,
+    },
   });
 
 module.exports = hotelModel;
