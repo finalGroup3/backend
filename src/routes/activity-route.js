@@ -17,8 +17,8 @@ activityRouter.get(
 );
 activityRouter.post(
   "/activity",
-  bearerAuth,
-  acl("createOwner"),
+  // bearerAuth,
+  // acl("createOwner"),
   createactivity
 );
 activityRouter.put(
@@ -51,7 +51,7 @@ async function getOneactivity(req, res) {
 }
 async function createactivity(req, res) {
   let activityData = req.body;
-  activityData.ownerId = req.user.id;
+  // activityData.ownerId = req.user.id;
 
   let activityRecord = await activity.create(activityData);
   res.status(201).json(activityRecord);

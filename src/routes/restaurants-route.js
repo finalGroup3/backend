@@ -18,8 +18,8 @@ restRouter.get(
 );
 restRouter.post(
   "/restaurants",
-  bearerAuth,
-  acl("createOwner"),
+  // bearerAuth,
+  // acl("createOwner"),
   createrestaurant
 );
 restRouter.put(
@@ -47,7 +47,7 @@ async function getOnerestaurant(req, res) {
 }
 async function createrestaurant(req, res) {
   let restaurantData = req.body;
-  restaurantData.ownerId = req.user.id ;
+  // restaurantData.ownerId = req.user.id ;
   let restaurantRecord = await restaurant.create(restaurantData);
   res.status(201).json(restaurantRecord);
 }
