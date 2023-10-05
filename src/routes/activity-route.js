@@ -60,7 +60,7 @@ async function updateactivity(req, res) {
   let id = parseInt(req.params.id);
   let activityData = req.body;
   let activitsyData = await activity.get(id);
-  if (activitsyData.ownerId == req.user.id) {
+  if (activitsyData.ownerId == req.user.id||req.user.role=="admin") {
     let activityRecord = await activity.update(id, activityData);
     res.status(201).json(activityRecord);
   }

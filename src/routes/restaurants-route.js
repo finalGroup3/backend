@@ -58,7 +58,7 @@ async function updaterestaurant(req, res) {
   let id = parseInt(req.params.id);
   let restaurantData = req.body;
   let restData = await restaurant.get(id);
-  if (restData.ownerId == req.user.id) {
+  if (restData.ownerId == req.user.id||req.user.role=="admin") {
     let restaurantRecord = await restaurant.update(id, restaurantData);
     res.status(201).json(restaurantRecord);
   }

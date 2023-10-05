@@ -35,7 +35,7 @@ async function updatehotel(req, res) {
 
   let hotelData = req.body;
   let updateData = await hotel.get(id);
-  if (updateData.ownerId == req.user.id) {
+  if (updateData.ownerId == req.user.id||req.user.role=="admin") {
     let hotelRecord = await hotel.update(id, hotelData);
     res.status(201).json(hotelRecord);
   }
