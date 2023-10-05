@@ -16,18 +16,21 @@ restRouter.get(
   acl("readUser"),
   getOnerestaurant
 );
+
 restRouter.post(
   "/restaurants",
   // bearerAuth,
   // acl("createOwner"),
   createrestaurant
 );
+
 restRouter.put(
   "/restaurants/:id",
   bearerAuth,
   acl("updateOwner"),
   updaterestaurant
 );
+
 restRouter.delete(
   "/restaurants/:id",
   bearerAuth,
