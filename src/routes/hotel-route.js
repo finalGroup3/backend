@@ -7,7 +7,7 @@ const { userCollection } = require("../models/index");
 const bearerAuth = require("../auth/middleware/bearer");
 const acl = require("../auth/middleware/acl");
 
-restRouter.get("/hotel", bearerAuth, acl("readUser"), gethotel);
+restRouter.get("/hotel", gethotel);
 restRouter.get("/hotel/:id", bearerAuth, acl("readUser"), getOnehotel);
 restRouter.post("/hotel", createhotel);
 restRouter.put("/hotel/:id", bearerAuth, acl("updateOwner"), updatehotel);

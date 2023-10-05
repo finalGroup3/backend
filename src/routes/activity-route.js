@@ -8,7 +8,7 @@ const { userCollection } = require("../models/index");
 const bearerAuth = require("../auth/middleware/bearer");
 const acl = require("../auth/middleware/acl");
 
-activityRouter.get("/activity", bearerAuth, acl("readUser"), getactivity);
+activityRouter.get("/activity", getactivity);
 activityRouter.get(
   "/activity/:id",
   bearerAuth,
